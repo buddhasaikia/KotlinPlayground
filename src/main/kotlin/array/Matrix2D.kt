@@ -37,3 +37,13 @@ class Matrix2D {
         println()
     }
 }
+
+fun main() {
+    val matrix = Matrix2D()
+    matrix.print()
+    matrix.initWithNaturalNumbers()
+    matrix.print()
+    val valueToFind = 19
+    val isValueExists = matrix.isExist(valueToFind)
+    println("Is value, $valueToFind exists in matrix: $isValueExists")
+}

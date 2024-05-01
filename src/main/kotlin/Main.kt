@@ -10,12 +10,12 @@ fun main() {
     while (true) {
         when (scanner.next()) {
             "1" -> {
-                val matrixManipulation = Matrix2D()
-                matrixManipulation.print()
-                matrixManipulation.initWithNaturalNumbers()
-                matrixManipulation.print()
+                val matrix = Matrix2D()
+                matrix.print()
+                matrix.initWithNaturalNumbers()
+                matrix.print()
                 val valueToFind = 19
-                val isValueExists = matrixManipulation.isExist(valueToFind)
+                val isValueExists = matrix.isExist(valueToFind)
                 println("Is value, $valueToFind exists in matrix: $isValueExists")
                 menu()
             }
