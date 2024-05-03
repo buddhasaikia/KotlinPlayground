@@ -9,34 +9,31 @@ class Matrix2DBoundaryTraversal {
 
     fun traverseBoundaryElements() {
         matrixOperation.initMatrixWithNaturalNumbers(matrix, maxRow, maxCol)
-        for (iteration in 1..4) {
-            when (iteration) {
-                1 -> {
-                    for (col in 0..<maxCol) {
-                        print("${matrix[0][col]}    ")
-                    }
-                }
-
-                2 -> {
-                    for (row in iteration - 1..<maxRow) {
-                        print("${matrix[row][maxCol - 1]}   ")
-                    }
-                }
-
-                3 -> {
-                    for (col in maxCol - 2 downTo 0) {
-                        print("${matrix[maxRow - 1][col]}   ")
-                    }
-                }
-
-                4 -> {
-                    for (row in maxRow - 2 downTo 1) {
-                        print("${matrix[row][0]}    ")
-                    }
-                }
-            }
+        var row = 0
+        var col = 0
+        while (col < maxCol) {
+            print("${matrix[row][col]}    ")
+            col++
+        }
+        row += 1
+        col--
+        while (row < maxRow) {
+            print("${matrix[row][col]}    ")
+            row++
+        }
+        row--
+        col = row - 1
+        while (col >= 0) {
+            print("${matrix[row][col]}    ")
+            col--
         }
 
+        row--
+        col = 0
+        while (row > 0) {
+            print("${matrix[row][col]}    ")
+            row--
+        }
     }
 }
 
